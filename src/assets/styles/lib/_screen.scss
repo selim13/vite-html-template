@@ -1,0 +1,30 @@
+$xs: 320px; // mobile
+$sm: 450px;
+$md: 768px; // tablet
+$lg: 1024px;
+$xl: 1400px;
+$xl2: 1900px;
+
+@mixin from($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin to($breakpoint) {
+  @media screen and (max-width: $breakpoint - 1) {
+    @content;
+  }
+}
+
+@mixin between($from, $to) {
+  @media screen and (min-width: $from - 1) and (max-width: $to - 1) {
+    @content;
+  }
+}
+
+@mixin from-height($breakpoint) {
+  @media screen and (min-height: $breakpoint) {
+    @content;
+  }
+}

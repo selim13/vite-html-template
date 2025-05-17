@@ -1,0 +1,13 @@
+.i {
+  display: block;
+  vertical-align: text-bottom;
+  background-color: currentcolor;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.i--burger-24 {
+  width: 24px;
+  height: 24px;
+  mask-image: url(../images/icons/24/burger.svg);
+}

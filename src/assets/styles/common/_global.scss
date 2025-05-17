@@ -1,0 +1,24 @@
+:root {
+  --size-topbar-offset: 82px;
+}
+
+html {
+  scroll-padding-top: var(--size-topbar-offset);
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+// disable all animations if the user wants to
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  *,
+  *::before,
+  *::after {
+    transition-delay: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-delay: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

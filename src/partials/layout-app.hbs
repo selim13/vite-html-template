@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {{!-- don't randomly turn text into the phone links on IOS --}}
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="assets/styles/index.scss" />
+  </head>
+
+  <body class="page {{body_class}}">
+    {{> @partial-block }}
+
+    <script type="module" src="assets/scripts/index.js"></script>
+  </body>
+</html>
