@@ -24,6 +24,8 @@ export default defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
     target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari13'],
+    manifest: true,
+    sourcemap: true,
     rollupOptions: {
       input: inputs,
     },
