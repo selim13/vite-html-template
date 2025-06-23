@@ -1,13 +1,62 @@
 :root {
-  --size-topbar-offset: 82px;
+  // colors map
+  --clr-bg: #f7f6fa;
+  --clr-text: rgb(42 17 70 / 80%);
+
+  // font faces
+  --fnt-primary: 'Roboto', sans-serif;
+
+  // font sizings
+  --fs-100: 10px;
+  --fs-200: 12px;
+  --fs-300: 14px;
+  --fs-350: 15px;
+  --fs-400: 16px; // base size
+  --fs-500: 18px;
+  --fs-600: 20px;
+  --fs-700: 22px;
+  --fs-800: 26px;
+  --fs-1000: 40px;
+
+  // sizings
+  --sz-gutter: 20px;
+  --sz-content-max-width: 100%;
+  --sz-sidegap: 16px;
+  --sz-topbar-height: 50px;
+  --sz-topbar-v-gaps: 16px;
+  --sz-topbar-content-offset: calc(
+    var(--sz-topbar-height) + var(--sz-topbar-v-gaps) * 2
+  );
+
+  // transitions
+  --t: 0.3s ease-out; // default transition
+
+  // z-indices
+  --z-topbar: 100;
 }
 
 html {
-  scroll-padding-top: var(--size-topbar-offset);
+  scroll-padding-top: var(--sz-topbar-content-offset);
 
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
+}
+
+.is-no-scroll body {
+  overflow: hidden !important;
+  -webkit-overflow-scrolling: none;
+  height: auto !important;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-weight: 400;
+  font-size: var(--fs-400);
+  font-family: var(--fnt-primary);
 }
 
 // disable all animations if the user wants to
@@ -21,4 +70,24 @@ html {
     animation-delay: 0.001ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+::selection {
+  background: var(--clr-text);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: rgb(0 0 0 / 15%);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background-color: transparent;
 }
